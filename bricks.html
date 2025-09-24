@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bricks - Home Roofing</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+   
+    .top-bar {
+      background: #00274d; 
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 30px;
+      font-size: 14px;
+    }
+    .top-bar .left, .top-bar .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-bar i {
+      margin-right: 6px;
+      color: #f4783f; 
+    }
+    .icon-big {
+      font-size: 24px;        
+      vertical-align: middle;
+      margin-left: 6px;      
+    }
+
+    
+    .second-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo img {
+      height: 100px;
+      object-fit: contain;
+    }
+    .search-box {
+      flex: 1;
+      max-width: 500px;
+      margin: 0 20px;
+      display: flex;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      background: #003366;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+    .menu span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 500;
+    }
+    .menu span i {
+      color: #003366;
+    }
+
+    
+    .nav {
+      background-color: #a6a9ac;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 12px 0;
+      list-style: none;
+      margin: 0;
+    }
+    .nav li {
+      position: relative;
+      list-style: none;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+    .nav li i {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    .nav a {
+      text-decoration: none;   
+      color: #1e3bbb;             
+      font-weight: 700;
+    }
+    .nav a:hover {
+      color: #3d3928;          
+    }
+
+    
+    .nav li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 200px;
+      padding: 10px 0;
+      list-style: none;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+    .nav li ul li {
+      padding: 10px 15px;
+      color: #333;
+    }
+    .nav li ul li:hover {
+      background: #f1f1f1;
+      color: #003366;
+    }
+    .nav li:hover ul {
+      display: block;
+    }
+
+
+.breadcrumb {
+  background: #f8f9fa;
+  padding: 12px 30px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  border-left: 4px solid #003366;
+  color: #555;
+}
+.breadcrumb a {
+  color: #003366;
+  font-weight: 500;
+}
+.breadcrumb a:hover {
+  color: #f4783f;
+}
+
+
+main section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+main h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: #003366;
+  border-bottom: 2px solid #f4783f;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+main p {
+  line-height: 2.7;
+  color: #29565c;
+  margin-bottom: 40px;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 720px;   
+  height: 380px;   
+  object-fit: cover; 
+  border-radius: 8px;
+  margin: 0 auto 15px; 
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+.body-image-section img {
+  width: 100%;
+  max-height: 450px;   
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.product-card img:hover {
+  transform: scale(1.05);
+}
+.product-card h3 {
+  margin: 10px 0;
+  color: #003366;
+}
+.product-card p {
+  font-size: 14px;
+  color: #555;
+}
+.product-card button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: #003366;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.product-card button:hover {
+  background: #090824;
+}
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f;   
+  margin: 10px 0;
+  display: block;
+}
+
+
+.why-choose-us {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+.why-choose-us h2 {
+  color: #003366;
+  font-size: 28px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #f4783f;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.feature {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-6px);
+}
+.feature i {
+  font-size: 40px;
+  color: #f4783f;
+  margin-bottom: 15px;
+}
+.feature h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+.feature p {
+  color: #555;
+  font-size: 14px;
+}
+
+
+.bricks-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 40px;
+  background: #f9f9f9;
+}
+
+.bricks-content {
+  flex: 1;
+}
+
+.bricks-content h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+#typewriter {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f4783f;
+  border-right: 2px solid #f4783f;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.bricks-image {
+  flex: 1;
+  position: relative;
+  height: 520px; 
+}
+
+.bricks-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.bricks-image img.active {
+  opacity: 1;
+}
+
+
+.footer {
+  background: #05182b;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+  margin: 15px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.newsletter-form button {
+  background: #ff9900;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #003366;
+  font-weight: bold;
+}
+
+.newsletter-form button:hover {
+  background: #e68a00;
+}
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  
+  justify-content: center;
+}
+
+.social-icons a {
+  font-size: 22px;
+  color: #fff;
+  background: #004080;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+
+}
+
+.social-icons a:hover {
+  background: #ff9900;
+  color: #003366;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #ffcc00;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+ 
+  <div class="top-bar">
+    <div class="left">
+      <span><i class="fa fa-phone"></i> 0106531952 / 0792683169</span>
+    </div>
+    <div class="center">
+      <span>Home Roofing Shop <i class='bx bx-right-arrow-alt icon-big'></i></span>
+    </div>
+    <div class="right">
+      <span><i class="fa fa-map-marker-alt"></i> We Deliver Everywhere</span>
+    </div>
+  </div>
+
+  <div class="second-bar">
+    <div class="logo">
+      <img src="logo.png" alt="Home Roofing Logo">
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Enter Keyword or Item">
+      <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="menu">
+      <span><i class="fa fa-headset"></i> Help & Support</span>
+      <span><i class="fa fa-list"></i> My Project List</span>
+      <span><i class="fa fa-shopping-cart"></i> My Cart</span>
+      <span><i class="fa fa-user"></i> Log In / Register</span>
+    </div>
+  </div>
+
+  <ul class="nav">
+    <li>Roofing Solutions <i class='bx bx-chevron-down'></i>
+      <ul>
+        <li><a href="ironsheet.html">Iron Sheets</a></li>
+        <li><a href="tiles.html">Tiles</a></li>
+        <li> <a href="shingles.html">Shingles</a></li>
+      </ul>
+    </li>
+    <li>Rain Waterproof Sheets <i class='bx bx-chevron-down'></i>
+      <ul>
+        <li><a href="plastic sheets.html">Plastic Sheets</a></li>
+
+        <li><a href="waterproof-membranes.html">Waterproof Membranes</a></li>
+      </ul>
+    </li>
+    <li>
+      Building Suits <i class='bx bx-chevron-down'></i>
+      <ul>
+        <li><a href="cement.html">residential-ridges.</a></li>
+        <li><a href="bricks.html">Bricks & Tiles </a></li>
+        
+      </ul>
+    </li>
+    <li>Ventilation <i class='bx bx-chevron-down'></i>
+      <ul>
+        <li><a href="air-vents.html">Air Vents</a></li>
+        <li><a href="louvers.html">Louvers</a></li>
+        <li><a href="exhaust-systems.html">Exhaust Systems</a></li>
+      </ul>
+    </li>
+    <li>Corrugated Iron Sheets <i class='bx bx-chevron-down'></i>
+      <ul>
+        <li><a href="bitumen.html">Bitumen</a></li>
+        <li><a href="polycarbonate.html">Polycarbonate roofing sheets</a></li>
+        <li><a href="galvanized.html">Galvanized Steel Sheets</a></li>
+        <li><a href="Metal Roofing.html">Metal Roofing Sheets</a></li>
+        <li><a href="Fiber Roofing.html">Fibre Cement Roofing Sheets</a></li>
+      </ul>
+
+
+
+      <li>
+        <a href="warranty.html">Warranty <i class='bx bx-chevron-down'></i></a>
+        <ul>
+          <li><a href="waranty.html#roofing">Roofing Warranty</a></li>
+          <li><a href="waranty.html#sheets">Waterproof Sheets Warranty</a></li>
+        </ul>
+      </li>
+    </li>
+  </ul> 
+
+
+  <body>
+  <div class="breadcrumb">
+    <a href="home.html">Home</a> &gt; <strong>Bricks</strong>
+  </div>
+
+  <main>
+    <section>
+      <h2>Building Suites</h2>
+      <p>
+        solid brick construction and brick veneer. Solid brick homes have load-bearing brick walls, while brick veneer uses a non-structural layer of bricks for the exterior. Choosing the right method depends on your budget, structural needs, and desired aesthetic
+      </p>
+    </section>
+    <section>
+      <h2>Available Brick Products</h2>
+      <div class="product-grid">
+        
+        <div class="product-card">
+          <img src="c1.jpeg" alt="Bituminous Membrane">
+          <h3>Bituminous Membrane</h3>
+          <p>Highly durable waterproof membrane for flat and sloped roofs.</p><br>
+          <div class="price"> ksh 1300</div>
+          <button>Shop Now</button>
+        </div>
+    
+        <div class="product-card">
+          <img src="hollow-clay-bricks.jpeg" alt="Hollow Clay Bricks">
+          <h3>Hollow Clay Bricks</h3>
+          <p>Durable clay bricks suitable for strong and lasting walls.</p><br>
+          <div class="price"> ksh 1500</div>
+          <button>Shop Now</button>
+        </div>
+    
+        <div class="product-card">
+          <img src="hb-square-concrete-bricks.jpg" alt="Concrete Bricks">
+          <h3>Concrete Bricks</h3>
+          <p>High-quality concrete bricks for long-lasting construction.</p><br>
+          <div class="price"> ksh 1230</div>
+          <button>Shop Now</button>
+        </div>
+    
+        <div class="product-card">
+          <img src="file_41_61.jpg" alt="Self-Adhesive Membrane">
+          <h3>Self-Adhesive Membrane</h3>
+          <p>Easy-to-install membrane with strong waterproof protection.</p><br>
+          <div class="price"> ksh 1000</div>
+
+          <button>Shop Now</button>
+        </div>
+    
+      </div>
+    </section>
+    
+  </main>
+  <section class="why-choose-us">
+    <h2>Why Choose Home Roofing?</h2>
+    <div class="features-grid">
+  
+      <div class="feature">
+        <i class='bx bx-check-shield'></i>
+        <h3>Quality Guaranteed</h3>
+        <p>We provide certified roofing and building products for durability and safety.</p>
+      </div>
+  
+      <div class="feature">
+        <i class='bx bx-package'></i>
+        <h3>Nationwide Delivery</h3>
+        <p>We deliver everywhere across Kenya, right to your site or home.</p>
+      </div>
+  
+      <div class="feature">
+        <i class='bx bx-dollar-circle'></i>
+        <h3>Affordable Pricing</h3>
+        <p>Competitive prices with no compromise on quality.</p>
+      </div>
+  
+      <div class="feature">
+        <i class='bx bx-support'></i>
+        <h3>24/7 Support</h3>
+        <p>Our customer service team is always ready to help you.</p>
+      </div>
+  
+    </div>
+  </section>
+  
+  <section class="bricks-section">
+    <div class="bricks-content">
+      <h2>BrickTile & Roofing</h2>
+      <p id="typewriter"></p>
+    </div>
+  
+    <div class="bricks-image">
+      <img src="color-coated-flat-polish-roof-tile-2224844866-kmcfnit4.jpg" alt="Color coated flat polish roof " class="fade active">
+      <img src="A Black Roof.jpg" alt="Clay Bricks" class="fade">
+      <img src="tileroof.jpg" alt="Tile Roof" class="fade">
+    </div>
+  </section>
+</body>
+  <footer class="footer">
+    <div class="footer-container">
+    
+      <div class="footer-column">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">How to Shop Online</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Roof Visualiser</a></li>
+          <li><a href="#">Roof Calculator</a></li>
+        </ul>
+      </div>
+  
+  
+      <div class="footer-column">
+        <h3>Need Help?</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">A member of:</a></li>
+          <li><a href="mailto:info@homeroofing.com">Email Us</a></li>
+          <li><a href="tel:+254724491544">+254 724491544</a></li>
+          <li><a href="#">Find a Store</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+        </ul>
+      </div>
+  
+     
+      <div class="footer-column">
+        <h3>Subscribe to our Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email address" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+   
+   <div class="social-icons">
+    <a href="#"><i class='bx bxl-facebook'></i></a>
+    <a href="#"><i class='bx bxl-instagram'></i></a>
+    <a href="#"><i class='bx bxl-twitter'></i></a>
+    <a href="#"><i class='bx bxl-linkedin'></i></a>
+    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+  </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025- Home Roofing.Product of Salpan Softwares . All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Auto typing effect
+    const textArray = [
+      "Perfect for lasting construction for roof tiles.",
+      "Color coated flat polish roof.",
+      " Affordable roofing sheets with lipa pole pole. Free and fast delivery countrywide. SuperBrand of East Africa. Professional Installation. Monthly Instalments.."
+    ];
+    let i = 0, j = 0, currentText = "", isDeleting = false;
+  
+    function type() {
+      currentText = textArray[i];
+      let displayedText = currentText.substring(0, j);
+  
+      document.getElementById("typewriter").innerHTML = displayedText;
+  
+      if (!isDeleting && j < currentText.length) {
+        j++;
+        setTimeout(type, 100);
+      } else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          i = (i + 1) % textArray.length;
+        }
+        setTimeout(type, 1000);
+      }
+    }
+    type();
+  
+let slideIndex = 0;
+const slides = document.querySelectorAll(".bricks-image img");
+
+function showSlides() {
+  slides.forEach((img, idx) => {
+    img.classList.remove("active");
+    if (idx === slideIndex) img.classList.add("active");
+  });
+
+  slideIndex = (slideIndex + 1) % slides.length;
+  setTimeout(showSlides, 4000);
+}
+showSlides();
+
+  </script>
+</body>
+</html>

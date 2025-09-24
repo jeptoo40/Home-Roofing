@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitumen Sheets - Home Roofing</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; }
+    .top-bar { background: #00274d; color: white; display: flex; justify-content: space-between; align-items: center; padding: 8px 30px; font-size: 14px; }
+    .top-bar i { margin-right: 6px; color: #f4783f; }
+    .icon-big { font-size: 24px; margin-left: 6px; }
+
+    .second-bar { display: flex; align-items: center; justify-content: space-between; background-color: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd; }
+    .logo img { height: 100px; object-fit: contain; }
+    .search-box { flex: 1; max-width: 500px; margin: 0 20px; display: flex; }
+    .search-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-right: none; border-radius: 5px 0 0 5px; }
+    .search-box button { padding: 10px 15px; border: 1px solid #ccc; background: #003366; color: #fff; border-radius: 0 5px 5px 0; cursor: pointer; }
+    .menu { display: flex; gap: 20px; font-size: 14px; }
+    .menu span { display: flex; align-items: center; gap: 5px; cursor: pointer; color: #333; font-weight: 500; }
+    .menu span i { color: #003366; }
+
+    .nav { background-color: #a6a9ac; display: flex; justify-content: center; gap: 40px; padding: 12px 0; list-style: none; margin: 0; }
+    .nav li { position: relative; list-style: none; color: #fff; font-weight: 500; cursor: pointer; padding: 8px 12px; }
+    .nav a { text-decoration: none; color: #1e3bbb; font-weight: 700; }
+    .nav a:hover { color: #3d3928; }
+    .nav li ul { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; padding: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+    .nav li:hover ul { display: block; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+   
+    .top-bar {
+      background: #00274d; 
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 30px;
+      font-size: 14px;
+    }
+    .top-bar .left, .top-bar .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-bar i {
+      margin-right: 6px;
+      color: #f4783f; 
+    }
+    .icon-big {
+      font-size: 24px;        
+      vertical-align: middle;
+      margin-left: 6px;      
+    }
+
+    
+    .second-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo img {
+      height: 100px;
+      object-fit: contain;
+    }
+    .search-box {
+      flex: 1;
+      max-width: 500px;
+      margin: 0 20px;
+      display: flex;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      background: #003366;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+    .menu span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 500;
+    }
+    .menu span i {
+      color: #003366;
+    }
+
+   
+    .nav {
+      background-color: #a6a9ac;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 12px 0;
+      list-style: none;
+      margin: 0;
+    }
+    .nav li {
+      position: relative;
+      list-style: none;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+    .nav li i {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    .nav a {
+      text-decoration: none;   
+      color: #1e3bbb;             
+      font-weight: 700;
+    }
+    .nav a:hover {
+      color: #3d3928;          
+    }
+
+   
+    .nav li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 200px;
+      padding: 10px 0;
+      list-style: none;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+    .nav li ul li {
+      padding: 10px 15px;
+      color: #333;
+    }
+    .nav li ul li:hover {
+      background: #f1f1f1;
+      color: #003366;
+    }
+    .nav li:hover ul {
+      display: block;
+    }
+
+    .breadcrumb { background: #f1f5f9; padding: 12px 25px; font-size: 14px; color: #444; }
+    .breadcrumb a { text-decoration: none; color: #003366; font-weight: bold; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .hero-banner { position: relative; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+    .hero-banner::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.55); z-index: 2; }
+    .hero-banner .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 4; animation: fadeSlide 3s infinite; }
+    .hero-banner .slide:nth-child(1) { background-image: url('bitumen1.jpg'); animation-delay: 0s; }
+    .hero-banner .slide:nth-child(2) { background-image: url('bitumen2.jpg'); animation-delay: 1s; }
+    .hero-banner .slide:nth-child(3) { background-image: url('bitumen3.jpg'); animation-delay: 1s; }
+    @keyframes fadeSlide { 0%, 20% { opacity: 1; } 33%, 100% { opacity: 0; } }
+    .hero-content { position: relative; z-index: 3; max-width: 800px; }
+    .hero-content h1 { font-size: 42px; font-weight: 700; margin-bottom: 12px; }
+    .hero-content p { font-size: 18px; margin-bottom: 20px; }
+
+    .features { background: #f9fafb; padding: 60px 20px; text-align: center; }
+    .features h2 { font-size: 28px; color: #00274d; margin-bottom: 40px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: auto; }
+    .feature-card { background: #fff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .feature-card i { font-size: 40px; color: #f4783f; margin-bottom: 15px; }
+    .feature-card h3 { font-size: 20px; color: #003366; margin-bottom: 10px; }
+    .feature-card p { font-size: 17px; color: #2a2547; }
+
+    .info-section { padding: 70px 20px; background: #fff; }
+    .info-container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: auto; gap: 40px; flex-wrap: wrap; }
+    .info-image img { width: 100%; max-width: 600px; height: 400px; object-fit: cover; border-radius: 17px; }
+    .info-text { flex: 1; }
+    .info-text h2 { font-size: 38px; color: #5f94c9; margin-bottom: 20px; border-right: 3px solid #f4783f; white-space: nowrap; overflow: hidden; animation: typing 4s steps(30, end) forwards, blink 0.8s step-end infinite alternate; }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent } }
+
+
+    .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  color: #00274d;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 27px;
+  line-height: 1.7;
+  color: #241052;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    text-align: center;
+  }
+}
+
+.footer {
+  background: #05182b;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+  margin: 15px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.newsletter-form button {
+  background: #ff9900;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #003366;
+  font-weight: bold;
+}
+
+.newsletter-form button:hover {
+  background: #e68a00;
+}
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  
+  justify-content: center;
+}
+
+.social-icons a {
+  font-size: 22px;
+  color: #fff;
+  background: #004080;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+
+}
+
+.social-icons a:hover {
+  background: #ff9900;
+  color: #003366;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #ffcc00;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+  <body>
+ 
+    <div class="top-bar">
+      <div class="left">
+        <span><i class="fa fa-phone"></i> 0106531952 / 0792683169</span>
+      </div>
+      <div class="center">
+        <span>Home Roofing Shop <i class='bx bx-right-arrow-alt icon-big'></i></span>
+      </div>
+      <div class="right">
+        <span><i class="fa fa-map-marker-alt"></i> Store Finder</span>
+      </div>
+    </div>
+  
+    <div class="second-bar">
+      <div class="logo">
+        <img src="logo.png" alt="Home Roofing Logo">
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Enter Keyword or Item">
+        <button><i class="fa fa-search"></i></button>
+      </div>
+      <div class="menu">
+        <span><i class="fa fa-headset"></i> Help & Support</span>
+        <span><i class="fa fa-list"></i> My Project List</span>
+        <span><i class="fa fa-shopping-cart"></i> My Cart</span>
+        <span><i class="fa fa-user"></i> Log In / Register</span>
+      </div>
+    </div>
+  
+    <ul class="nav">
+      <li>Roofing Solutions <i class='bx bx-chevron-down'></i>
+        <ul>
+          <li><a href="ironsheet.html">Iron Sheets</a></li>
+          <li><a href="tiles.html">Tiles</a></li>
+          <li> <a href="shingles.html">Shingles</a></li>
+        </ul>
+      </li>
+      <li>Rain Waterproof Sheets <i class='bx bx-chevron-down'></i>
+        <ul>
+          <li><a href="plastic sheets.html">Plastic Sheets</a></li>
+  
+          <li><a href="waterproof-membranes.html">Waterproof Membranes</a></li>
+        </ul>
+      </li>
+      <li>
+        Building Suits <i class='bx bx-chevron-down'></i>
+        <ul>
+          <li><a href="cement.html">residential-ridges.</a></li>
+          <li><a href="bricks.html">Bricks & Tiles </a></li>
+          
+        </ul>
+      </li>
+      <li>Ventilation <i class='bx bx-chevron-down'></i>
+        <ul>
+          <li><a href="air-vents.html">Air Vents</a></li>
+          <li><a href="louvers.html">Louvers</a></li>
+          <li><a href="exhaust-systems.html">Exhaust Systems</a></li>
+        </ul>
+      </li>
+      <li>Corrugated Iron Sheets <i class='bx bx-chevron-down'></i>
+        <ul>
+          <li><a href="bitumen.html">Bitumen</a></li>
+          <li><a href="polycarbonate.html">Polycarbonate roofing sheets</a></li>
+          <li><a href="galvanized.html">Galvanized Steel Sheets</a></li>
+          <li><a href="Metal Roofing.html">Metal Roofing Sheets</a></li>
+      
+        </ul>
+  
+  
+        <li>
+          <a href="waranty.html">Warranty <i class='bx bx-chevron-down'></i></a>
+          <ul>
+            <li><a href="waranty.html#roofing">Roofing Warranty</a></li>
+            <li><a href="waranty.html#sheets">Waterproof Sheets Warranty</a></li>
+          </ul>
+        </li>
+        </li>
+        </ul>
+  
+  <div class="breadcrumb">
+    <a href="home.html">Home</a> &gt; <strong>Bitumen Sheets</strong>
+  </div>
+
+  
+  <section class="hero-banner">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="hero-content">
+      <h1>Durable Bitumen Sheets</h1>
+      <p>Strong, weatherproof, and cost-effective roofing for lasting protection.Made from asphalt, bitumen doesn't rust or corrode, ensuring a long-lasting, maintenance-free surface. 
+      Bitumen sheets are known for their high-tensile strength, resistance to cracks, and a lifespan of 20 years or more, providing long-term protection. They are resistant to wind, hail, fire, and industrial atmospheres, making them a reliable roofing choice in various climates. </p>
+    </div>
+  </section>
+
+  <main>
+    <section class="about-section">
+      <div class="about-container">
+      
+        <div class="about-text">
+          <h2>About Bitumen Sheets</h2>
+          <p>
+            Bitumen sheets are widely used for waterproofing and roofing due to their durability and affordability.  
+            They offer excellent resistance to harsh weather conditions and ensure long-term roof protection.  
+            Bitumen sheets offer superior noise dampening, producing less tapping or drumming sound during rain compared to metal alternatives.  
+            Also used for covering during construction to protect underlying structures from weather.
+          </p>
+        </div>
+  
+       
+        <div class="about-image">
+          <img src="commercial-modified-bitumen-roof-system.jpg" alt="Bitumen Sheets">
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="features">
+      <h2>Why Choose Bitumen?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class='bx bx-shield'></i>
+          <h3>Waterproof</h3>
+          <p>Provides superior protection against leaks and heavy rainfall.</p>
+        </div>
+        <div class="feature-card">
+          <i class='bx bx-sun'></i>
+          <h3>UV Resistant</h3>
+          <p>Protects roofs from harmful sun exposure and extends lifespan.</p>
+        </div>
+        <div class="feature-card">
+          <i class='bx bx-money'></i>
+          <h3>Cost Effective</h3>
+          <p>Affordable solution without compromising on strength.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-container">
+        <div class="info-image">
+          <img src="bitumen2.jpg" alt="Bitumen Sheets">
+        </div>
+        <div class="info-text">
+          <h2 id="typewriter"></h2>
+          <p>
+            Our bitumen sheets are manufactured with top-grade materials to ensure maximum performance in all climates.  
+            Whether for residential or commercial use, they deliver unmatched reliability and long-term savings.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+    
+      <div class="footer-column">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">How to Shop Online</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Roof Visualiser</a></li>
+          <li><a href="#">Roof Calculator</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>Need Help?</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">A member of:</a></li>
+          <li><a href="mailto:info@homeroofing.com">Email Us</a></li>
+          <li><a href="tel:+254724491544">+254 724491544</a></li>
+          <li><a href="#">Find a Store</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+        </ul>
+      </div>
+  
+ 
+      <div class="footer-column">
+        <h3>Subscribe to our Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email address" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+ 
+   <div class="social-icons">
+    <a href="#"><i class='bx bxl-facebook'></i></a>
+    <a href="#"><i class='bx bxl-instagram'></i></a>
+    <a href="#"><i class='bx bxl-twitter'></i></a>
+    <a href="#"><i class='bx bxl-linkedin'></i></a>
+    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+  </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025- Home Roofing.Product of Salpan Softwares . All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const texts = ["Durable Roofing", "Weatherproof", "Cost-Effective"];
+    let count = 0, index = 0, currentText = "", letter = "";
+    const typewriterElement = document.getElementById("typewriter");
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      typewriterElement.textContent = letter;
+      if (letter.length === currentText.length) { count++; index = 0; setTimeout(type, 1500); }
+      else setTimeout(type, 100);
+    }
+    type();
+  </script>
+</body>
+</html>
